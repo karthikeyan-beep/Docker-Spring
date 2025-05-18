@@ -1,7 +1,7 @@
 # -------- Stage 1: Build the JAR using Maven --------
 # Use Maven image with OpenJDK 11 to build the project
 # FROM maven:3.8.8-openjdk-11 AS builder
-FROM maven:3-openjdk-11 AS builder
+FROM maven:3.8.3-openjdk-17 AS builder
 
 # Set working directory inside the container
 WORKDIR /build
@@ -18,7 +18,7 @@ RUN mvn clean package -DskipTests
 
 # -------- Stage 2: Create lightweight image with only the JAR --------
 # Use slim OpenJDK 11 for minimal runtime image
-FROM openjdk:11-jdk-slim
+FROM openjdk:17.0.1-jdk-slim
 
 # Set working directory
 WORKDIR /app
