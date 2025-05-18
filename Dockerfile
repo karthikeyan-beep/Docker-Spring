@@ -1,7 +1,7 @@
 # -------- Stage 1: Build the JAR using Maven --------
 # Use Maven image with OpenJDK 11 to build the project
 # FROM maven:3.8.8-openjdk-11 AS builder
-FROM maven:3.8.8-jdk-11 AS builder
+FROM maven:3-openjdk-11 AS builder
 
 # Set working directory inside the container
 WORKDIR /build
